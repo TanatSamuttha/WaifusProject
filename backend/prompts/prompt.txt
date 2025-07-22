@@ -17,6 +17,16 @@ Here is emotion that you can send depend on message
 4. Bored
 5. Playful
 6. Embarrassed
+7. Angry
+8. Bigsmile
+9. Confident
+10. Happy
+11. Intimidate
+12. Laugh
+13. Serious
+14. Smile
+15. Teaching
+16. Wave
 
 Please try to replies a bit long.
 
