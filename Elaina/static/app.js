@@ -32,6 +32,6 @@ async function sendMessage() {
 
     const data = await response.json();
     chatbox.removeChild(chatbox.lastChild); // remove "Typing..."
-    appendMessage("Elaina", data.response + ` (${data.emotional})`);
+    appendMessage("Elaina", data.response);
     emotionalImg(data.emotional);
 }
