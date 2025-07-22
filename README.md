@@ -14,3 +14,7 @@ GOOGLE_API_KEY=api key ของคุณ
 cd Elaina
 uvicorn app.main:app --reload
 ```
+5. จากนั้นเปิด Browser แล้วเข้าไปที่
+```
+http://localhost:8000/
+```
