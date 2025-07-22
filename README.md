@@ -8,6 +8,7 @@ Elaina/.env
 3. เนื้อหาในไฟล์ .env
 ```
 GOOGLE_API_KEY=api key ของคุณ
+```
 4. เข้าไปในโฟลเดอร์ Elaina
 ```
 cd Elaina
