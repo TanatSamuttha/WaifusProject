@@ -12,5 +12,5 @@ def insert_chat(session_id: str, user_message: str, elaina_message: str):
     response = supabase.table("chat").insert(data).execute()
 
 def query_chat(session_id: str):
-    response = supabase.table("chat").select("user_message, elaina_message").eq("session_id", session_id).execute()
+    response = supabase.table("chat").select("user_message, elaina_message").eq("session_id", session_id).order("id").limit(1000).execute()
     return response.data
