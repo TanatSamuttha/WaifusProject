@@ -10,8 +10,7 @@ def insert_chat(session_id: str, user_message: str, elaina_message: str):
         "elaina_message": elaina_message
     }
     response = supabase.table("chat").insert(data).execute()
-    print(response.data)
 
 def query_chat(session_id: str):
-    response = supabase.table("chat").select("user_message, elaina_message").eq("session_id", session_id)
+    response = supabase.table("chat").select("user_message, elaina_message").eq("session_id", session_id).execute()
     return response.data

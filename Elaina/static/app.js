@@ -1,5 +1,3 @@
-// const { it } = require("node:test");
-
 const chatbox = document.getElementById("chatbox");
 
 function appendMessage(sender, message) {
@@ -55,7 +53,7 @@ async function queryHistory(){
     const data = await response.json();
 
     for(item of data.response){
-        if(item.sender == "elaina"){
+        if(item.sender === "elaina"){
             appendMessage("Elaina", item.message)
         }
         else{

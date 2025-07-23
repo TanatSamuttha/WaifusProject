@@ -15,3 +15,7 @@ async def memory_query(session_id: str):
 
         memory_store.append(HumanMessage(content=user_msg))
         memory_store.append(AIMessage(content=elaina_msg))
+
+def update_memory(chat_history):
+    global memory_store
+    memory_store = chat_history
