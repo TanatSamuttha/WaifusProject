@@ -11,3 +11,6 @@ class ChatState(BaseModel):
 class ChatRequest(BaseModel):
     session_id: str
     message: str
+
+class ChatHistoryRequest(BaseModel):
+    session_id: str

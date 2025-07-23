@@ -1,3 +1,5 @@
+// const { it } = require("node:test");
+
 const chatbox = document.getElementById("chatbox");
 
 function appendMessage(sender, message) {
@@ -34,4 +36,30 @@ async function sendMessage() {
     chatbox.removeChild(chatbox.lastChild); // remove "Typing..."
     appendMessage("Elaina", data.response);
     emotionalImg(data.emotional);
+}
+
+async function queryHistory(){
+    const session = document.getElementById("session");
+    const session_id = session.value.trim();
+
+    if(!session_id) return;
+
+    chatbox.innerHTML = "";
+
+    const response = await fetch("/chat/Elaina/history", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ session_id })
+    });
+
+    const data = await response.json();
+
+    for(item of data.response){
+        if(item.sender == "elaina"){
+            appendMessage("Elaina", item.message)
+        }
+        else{
+            appendMessage("You", item.message)
+        }
+    }
 }
