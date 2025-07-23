@@ -46,6 +46,27 @@ h1 {
     flex: 1;
 }
 
+#session-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#session-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#session-container button {
+    padding: 10px 16px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
 button {
     padding: 10px 20px;
     background-color: #8e44ad;
