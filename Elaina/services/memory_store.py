@@ -14,9 +14,10 @@ def memory_query(session_id: str):
     for row in response:
         user_msg = row["user_message"]
         elaina_msg = row["elaina_message"]
+        emotional = row["emotional"]
 
         memory_store[session_id].append(HumanMessage(content=user_msg))
-        memory_store[session_id].append(AIMessage(content=elaina_msg))
+        memory_store[session_id].append(AIMessage(content=(emotional+"__________"+elaina_msg)))
 
 def update_memory(session_id: str, chat_history):
     # print(type(chat_history[0]))

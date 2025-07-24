@@ -60,4 +60,6 @@ async function queryHistory(){
             appendMessage("You", item.message)
         }
     }
+
+    emotionalImg(data.lastEmotional)
 }

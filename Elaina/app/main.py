@@ -30,7 +30,7 @@ async def elaina_endpoint(req: ChatRequest):
 
     update_memory(req.session_id, final_state["chat_history"])
 
-    insert_chat(req.session_id, req.message, final_state["response"])
+    insert_chat(req.session_id, req.message, final_state["response"], final_state["emotional"])
 
     return {
         "emotional": final_state["emotional"],
@@ -42,6 +42,7 @@ def elaina_history_endpoint(req: ChatHistoryRequest):
     memory_query(req.session_id)
 
     mem = []
+    lastEmotional = "Normal"
     for i in memory_store[req.session_id]:
         print(i)
         if i.type == "human":
@@ -52,10 +53,12 @@ def elaina_history_endpoint(req: ChatHistoryRequest):
         else:
             mem.append({
                 "sender": "elaina",
-                "message": str(i.content)
+                "message": str(i.content).split("__________")[1]
             })
+            lastEmotional = str(i.content).split("__________")[0]
     return {
-        "response": mem
+        "response": mem,
+        "lastEmotional": lastEmotional
     }
     
 
